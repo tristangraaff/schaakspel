@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +8,13 @@
   <link rel="stylesheet" href="style.css">
   <title>Chess</title>
 </head>
+
 <body>
   <div id="turn" class="player"></div>
   <div class="wrapper">
     <div id="board">
       <div class="row row_1">
+<<<<<<< HEAD
         <div class="box box_1"><span class="figure_1" draggable="true">&#9820</span></div>
         <div class="box box_1"><span class="figure">&#9822</span></div>
         <div class="box box_1"><span class="figure">&#9821</span></div>
@@ -20,16 +23,26 @@
         <div class="box box_1"><span class="figure">&#9821</span></div>
         <div class="box box_1"><span class="figure">&#9822</span></div>
         <div class="box box_1"><span class="figure">&#9820</span></div>
+=======
+        <div class="box box_1"><span class="figure rook rook_black">&#9820</span></div>
+        <div class="box box_1"><span class="figure knight knight_black">&#9822</span></div>
+        <div class="box box_1"><span class="figure bishop bishop_black">&#9821</span></div>
+        <div class="box box_1"><span class="figure queen queen_black">&#9819</span></div>
+        <div class="box box_1"><span class="figure king king_black">&#9818</span></div>
+        <div class="box box_1"><span class="figure bishop bishop_black">&#9821</span></div>
+        <div class="box box_1"><span class="figure knight knight_black">&#9822</span></div>
+        <div class="box box_1"><span class="figure rook rook_black">&#9820</span></div>
+>>>>>>> ea83ae1ef1c5020ad84cb9979a34800e7ff9d830
       </div>
       <div class="row">
-        <div class="box box_2"><span class="figure">&#9823</span></div>
-        <div class="box box_2"><span class="figure">&#9823</span></div>
-        <div class="box box_2"><span class="figure">&#9823</span></div>
-        <div class="box box_2"><span class="figure">&#9823</span></div>
-        <div class="box box_2"><span class="figure">&#9823</span></div>
-        <div class="box box_2"><span class="figure">&#9823</span></div>
-        <div class="box box_2"><span class="figure">&#9823</span></div>
-        <div class="box box_2"><span class="figure">&#9823</span></div>
+        <div class="box box_2"><span class="figure pawn pawn_black">&#9823</span></div>
+        <div class="box box_2"><span class="figure pawn pawn_black">&#9823</span></div>
+        <div class="box box_2"><span class="figure pawn pawn_black">&#9823</span></div>
+        <div class="box box_2"><span class="figure pawn pawn_black">&#9823</span></div>
+        <div class="box box_2"><span class="figure pawn pawn_black">&#9823</span></div>
+        <div class="box box_2"><span class="figure pawn pawn_black">&#9823</span></div>
+        <div class="box box_2"><span class="figure pawn pawn_black">&#9823</span></div>
+        <div class="box box_2"><span class="figure pawn pawn_black">&#9823</span></div>
       </div>
       <div class="row">
         <div class="box box_3"></div>
@@ -72,28 +85,29 @@
         <div class="box box_6"></div>
       </div>
       <div class="row">
-        <div class="box box_7"><span class="figure">&#9817</span></div>
-        <div class="box box_7"><span class="figure">&#9817</span></div>
-        <div class="box box_7"><span class="figure">&#9817</span></div>
-        <div class="box box_7"><span class="figure">&#9817</span></div>
-        <div class="box box_7"><span class="figure">&#9817</span></div>
-        <div class="box box_7"><span class="figure">&#9817</span></div>
-        <div class="box box_7"><span class="figure">&#9817</span></div>
-        <div class="box box_7"><span class="figure">&#9817</span></div>
+        <div class="box box_7"><span class="figure pawn pawn_white">&#9817</span></div>
+        <div class="box box_7"><span class="figure pawn pawn_white">&#9817</span></div>
+        <div class="box box_7"><span class="figure pawn pawn_white">&#9817</span></div>
+        <div class="box box_7"><span class="figure pawn pawn_white">&#9817</span></div>
+        <div class="box box_7"><span class="figure pawn pawn_white">&#9817</span></div>
+        <div class="box box_7"><span class="figure pawn pawn_white">&#9817</span></div>
+        <div class="box box_7"><span class="figure pawn pawn_white">&#9817</span></div>
+        <div class="box box_7"><span class="figure pawn pawn_white">&#9817</span></div>
       </div>
       <div class="row">
-        <div class="box box_8"><span class="figure">&#9814</span></div>
-        <div class="box box_8"><span class="figure">&#9816</span></div>
-        <div class="box box_8"><span class="figure">&#9815</span></div>
-        <div class="box box_8"><span class="figure">&#9813</span></div>
-        <div class="box box_8"><span class="figure">&#9812</span></div>
-        <div class="box box_8"><span class="figure">&#9815</span></div>
-        <div class="box box_8"><span class="figure">&#9816</span></div>
-        <div class="box box_8"><span class="figure">&#9814</span></div>
+        <div class="box box_8"><span class="figure rook rook_white">&#9814</span></div>
+        <div class="box box_8"><span class="figure knight knight_white">&#9816</span></div>
+        <div class="box box_8"><span class="figure bishop bishop_white">&#9815</span></div>
+        <div class="box box_8"><span class="figure queen queen_white">&#9813</span></div>
+        <div class="box box_8"><span class="figure king king_white">&#9812</span></div>
+        <div class="box box_8"><span class="figure bishop bishop_white">&#9815</span></div>
+        <div class="box box_8"><span class="figure knight knight_white">&#9816</span></div>
+        <div class="box box_8"><span class="figure rook rook_white">&#9814</span></div>
       </div>
     </div>
   </div>
 
   <script src="main.js"></script>
 </body>
+
 </html>
