@@ -33,16 +33,16 @@
   
 }
 
-.box_1:nth-of-type(odd),
-.box_3:nth-of-type(odd),
-.box_5:nth-of-type(odd),
-.box_7:nth-of-type(odd) {
+.box_1:nth-of-type(even),
+.box_3:nth-of-type(even),
+.box_5:nth-of-type(even),
+.box_7:nth-of-type(even) {
   background-color: #9c9c9c;
 }
-.box_2:nth-of-type(even),
-.box_4:nth-of-type(even),
-.box_6:nth-of-type(even),
-.box_8:nth-of-type(even) {
+.box_2:nth-of-type(odd),
+.box_4:nth-of-type(odd),
+.box_6:nth-of-type(odd),
+.box_8:nth-of-type(odd) {
   background-color: #9c9c9c;
 
 }
