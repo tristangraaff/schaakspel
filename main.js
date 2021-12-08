@@ -1,8 +1,8 @@
 class Draggable {
 
   constructor() {
-      this.figure = document.querySelector('.figure_1');
-      this.box = document.querySelectorAll('.box_3');
+      this.figure = document.querySelector('.figure');
+      this.box = document.querySelectorAll('.box');
       
       this._addEventListener();
   }
@@ -50,7 +50,7 @@ class Draggable {
   }
 
   drop() {
-       let figure = document.querySelector('.figure_1');
+       let figure = document.querySelector('.figure');
        this.classList.remove('drag_enter')
       this.append(figure)
   }
