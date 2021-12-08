@@ -49,3 +49,15 @@
 .figure{
   font-size: 40px;
 }
+/* new */
+.drag_start {
+  opacity: 0.5;
+}
+
+.invisible {
+  display: none;
+}
+
+.drag_enter {
+  border: 5px dashed #112244;
+}
