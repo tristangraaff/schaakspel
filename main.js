@@ -1,66 +1,65 @@
-class Draggable {
-
-  constructor() {
-      this.figure = document.querySelector('.figure');
-      this.box = document.querySelectorAll('.box');
-      
-      this._addEventListener();
-  }
-
-  _addEventListener() {
-      this.box.forEach(element => {
-          element.addEventListener('dragenter', this.dragenter)
-          element.addEventListener('dragleave', this.dragleave)
-          element.addEventListener('dragover', this.dragover)
-          element.addEventListener('drop', this.drop)
-      });
-
-      this.figure.addEventListener('dragstart', this.dragstart);
-      this.figure.addEventListener('dragend', this.dragend);
-  }
-
-  dragstart(e) {
-      this.classList.add('drag_start');
-     setTimeout(() => {
-        this.classList.add('invisible');
-     }, 0);
-  }
-
-  dragend(e) {
-      console.log('dragend')
-      this.classList.remove('invisible');
-      this.classList.remove('drag_start');
-  }
-
-  dragenter(e) {
-      e.preventDefault();
-      
-      console.log('dragenter')
-       this.classList.add('drag_enter');
-  }
-
-  dragleave(e) {
-      console.log('dragleave')
-      this.classList.remove('drag_enter');
-  }
-
-  dragover(e) {
-      e.preventDefault();
-      console.log('dragover')
-  }
-
-  drop() {
-       let figure = document.querySelector('.figure');
-       this.classList.remove('drag_enter')
-      this.append(figure)
-  }
-
-  static init() {
-      return new this();
+const IndividualBoxClasses = {
+  counter: 1,
+  allBoxes: document.querySelectorAll(".box"),
+  addClassesToElements: function() {
+    console.log(this.allBoxes);
+    for (element of this.allBoxes) {
+      const className = element.className.split(" ");
+      element.classList.add(className[1] + this.counter);
+      this.counter++;
+      if (this.counter === 9) this.counter = 1;
+    }
   }
 }
 
+IndividualBoxClasses.addClassesToElements();
+console.log(IndividualBoxClasses.allBoxes);
 
-document
-   .addEventListener('load', Draggable.init());
+// let pieceIsSelected = false; <--- werken met state
 
+const allBoxes = document.querySelectorAll(".box")
+let pieceToBeMoved = null;
+let pieceClassArray;
+
+for (let item of allBoxes) {
+  item.addEventListener("click", (event) => {
+    if (event.target.textContent === "♙") {
+      pieceClassArray = event.target.className.split(" ");
+      console.log(pieceClassArray);
+      pieceToBeMoved = "♙";
+    }
+    if (event.target.textContent === "") {
+      if (pieceToBeMoved === null) return;
+      event.target.innerText = pieceToBeMoved;
+      const oldPieceLocation = document.querySelector("." + pieceClassArray[pieceClassArray.length - 1]);
+      console.log(oldPieceLocation);
+      oldPieceLocation.innerHTML = "";
+      pieceToBeMoved = null;
+    }
+  })
+}
+
+
+//&#9817
+
+// class PieceMovement {
+//   constructor(piece) {
+//     this.piece = piece;
+//   }
+//   movePiece() {
+//     window.addEventListener("click", (event) => {
+//       if (event.target.textContent === this.piece) {
+//         console.log(event.target.textContent);
+//         window.addEventListener("click", (secondEvent) => {
+//           event.target.innerHTML = "";
+//           console.log(secondEvent.target)
+//           secondEvent.target.innerHTML = this.piece;
+//         })
+//       } else return
+//     });
+//   }
+// }
+
+// const pawn = new PieceMovement("♙");
+// pawn.movePiece();
+// console.log(pawn.piece);
