@@ -38,28 +38,3 @@ for (let item of allBoxes) {
     }
   })
 }
-
-
-//&#9817
-
-// class PieceMovement {
-//   constructor(piece) {
-//     this.piece = piece;
-//   }
-//   movePiece() {
-//     window.addEventListener("click", (event) => {
-//       if (event.target.textContent === this.piece) {
-//         console.log(event.target.textContent);
-//         window.addEventListener("click", (secondEvent) => {
-//           event.target.innerHTML = "";
-//           console.log(secondEvent.target)
-//           secondEvent.target.innerHTML = this.piece;
-//         })
-//       } else return
-//     });
-//   }
-// }
-
-// const pawn = new PieceMovement("♙");
-// pawn.movePiece();
-// console.log(pawn.piece);
