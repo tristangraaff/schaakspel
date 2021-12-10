@@ -1,7 +1,7 @@
 class Draggable {
 
   constructor() {
-      this.figure = document.querySelector('.figure');
+      this.figure = document.querySelectorAll('.pawn');
       this.box = document.querySelectorAll('.box');
       
       this._addEventListener();
@@ -15,8 +15,11 @@ class Draggable {
           element.addEventListener('drop', this.drop)
       });
 
-      this.figure.addEventListener('dragstart', this.dragstart);
-      this.figure.addEventListener('dragend', this.dragend);
+      this.figure.forEach(element => {
+        element.addEventListener('dragstart', this.dragstart);
+        element.addEventListener('dragend', this.dragend);
+      })
+      
   }
 
   dragstart(e) {
