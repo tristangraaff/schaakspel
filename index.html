@@ -1,103 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+    <title>Schaakspel Zico&Tristan</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <script src="main.js" defer></script>
-  <title>Schaakspel Zico&Tristan</title>
-</head>
-
-<body>
-  <div id="turn" class="player"></div>
-  <div class="wrapper">
-    <div id="board">
-      <div class="row row_1">
-        <div class="box box_1"><span class="figure rook rook_black" draggable="true">&#9820</span></div>
-        <div class="box box_1"><span class="figure knight knight_black" draggable="true">&#9822</span></div>
-        <div class="box box_1"><span class="figure bishop bishop_black" draggable="true">&#9821</span></div>
-        <div class="box box_1"><span class="figure queen queen_black" draggable="true">&#9819</span></div>
-        <div class="box box_1"><span class="figure king king_black" draggable="true">&#9818</span></div>
-        <div class="box box_1"><span class="figure bishop bishop_black" draggable="true">&#9821</span></div>
-        <div class="box box_1"><span class="figure knight knight_black" draggable="true">&#9822</span></div>
-        <div class="box box_1"><span class="figure rook rook_black" draggable="true">&#9820</span></div>
-      </div>
-      <div class="row">
-        <div class="box box_2"><span class="figure pawn pawn_black" draggable="true">&#9823</span></div>
-        <div class="box box_2"><span class="figure pawn pawn_black" draggable="true">&#9823</span></div>
-        <div class="box box_2"><span class="figure pawn pawn_black" draggable="true">&#9823</span></div>
-        <div class="box box_2"><span class="figure pawn pawn_black" draggable="true">&#9823</span></div>
-        <div class="box box_2"><span class="figure pawn pawn_black" draggable="true">&#9823</span></div>
-        <div class="box box_2"><span class="figure pawn pawn_black" draggable="true">&#9823</span></div>
-        <div class="box box_2"><span class="figure pawn pawn_black" draggable="true">&#9823</span></div>
-        <div class="box box_2"><span class="figure pawn pawn_black" draggable="true">&#9823</span></div>
-      </div>
-      <div class="row">
-        <div class="box box_3"></div>
-        <div class="box box_3"></div>
-        <div class="box box_3"></div>
-        <div class="box box_3"></div>
-        <div class="box box_3"></div>
-        <div class="box box_3"></div>
-        <div class="box box_3"></div>
-        <div class="box box_3"></div>
-      </div>
-      <div class="row">
-        <div class="box box_4"></div>
-        <div class="box box_4"></div>
-        <div class="box box_4"></div>
-        <div class="box box_4"></div>
-        <div class="box box_4"></div>
-        <div class="box box_4"></div>
-        <div class="box box_4"></div>
-        <div class="box box_4"></div>
-      </div>
-      <div class="row">
-        <div class="box box_5"></div>
-        <div class="box box_5"></div>
-        <div class="box box_5"></div>
-        <div class="box box_5"></div>
-        <div class="box box_5"></div>
-        <div class="box box_5"></div>
-        <div class="box box_5"></div>
-        <div class="box box_5"></div>
-      </div>
-      <div class="row">
-        <div class="box box_6 box_61"></div>
-        <div class="box box_6 box_62"></div>
-        <div class="box box_6 box_63"></div>
-        <div class="box box_6"></div>
-        <div class="box box_6"></div>
-        <div class="box box_6"></div>
-        <div class="box box_6"></div>
-        <div class="box box_6"></div>
-      </div>
-      <div class="row">
-        <div class="box box_7 box_71">♙</div>
-        <div class="box box_7 box_72">♙</div>
-        <div class="box box_7 box_73">♙</div>
-        <div class="box box_7"><span class="figure pawn pawn_white">&#9817</span></div>
-        <div class="box box_7"><span class="figure pawn pawn_white">&#9817</span></div>
-        <div class="box box_7"><span class="figure pawn pawn_white">&#9817</span></div>
-        <div class="box box_7"><span class="figure pawn pawn_white">&#9817</span></div>
-        <div class="box box_7"><span class="figure pawn pawn_white">&#9817</span></div>
-      </div>
-      <div class="row">
-        <div class="box box_8"><span class="figure rook rook_white">&#9814</span></div>
-        <div class="box box_8"><span class="figure knight knight_white">&#9816</span></div>
-        <div class="box box_8"><span class="figure bishop bishop_white">&#9815</span></div>
-        <div class="box box_8"><span class="figure queen queen_white">&#9813</span></div>
-        <div class="box box_8"><span class="figure king king_white">&#9812</span></div>
-        <div class="box box_8"><span class="figure bishop bishop_white">&#9815</span></div>
-        <div class="box box_8"><span class="figure knight knight_white">&#9816</span></div>
-        <div class="box box_8"><span class="figure rook rook_white">&#9814</span></div>
+  <body>
+    <div id="turn" class="player"></div>
+    <div class="wrapper">
+      <div id="board">
+        <div class="row row_1">
+          <div class="box box_1">
+            <img class="pawn pawn_black" src="./img/blackRook.png" />
+          </div>
+          <div class="box box_1">
+            <img class="knight knight_black" src="./img/blackKnight.png" />
+          </div>
+          <div class="box box_1">
+            <img class="bishop bishop_black" src="./img/blackBishop.png" />
+          </div>
+          <div class="box box_1">
+            <img class="queen queen_black" src="./img/blackQueen.png" />
+          </div>
+          <div class="box box_1">
+            <img class="king king_black" src="img/blackKing.png" />
+          </div>
+          <div class="box box_1">
+            <img class="bishop bishop_black" src="./img/blackKnight.png" />
+          </div>
+          <div class="box box_1">
+            <img class="knight knight_black" src="./img/blackBishop.png" />
+          </div>
+          <div class="box box_1">
+            <img class="pawn pawn_black" src="./img/blackRook.png" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="box box_2">
+            <img class="pawn pawn_black" src="./img/blackPawn.png" />
+          </div>
+          <div class="box box_2">
+            <img class="knight knight_black" src="./img/blackPawn.png" />
+          </div>
+          <div class="box box_2">
+            <img class="bishop bishop_black" src="./img/blackPawn.png" />
+          </div>
+          <div class="box box_2">
+            <img class="queen queen_black" src="./img/blackPawn.png" />
+          </div>
+          <div class="box box_2">
+            <img class="king king_black" src="./img/blackPawn.png" />
+          </div>
+          <div class="box box_2">
+            <img class="bishop bishop_black" src="./img/blackPawn.png" />
+          </div>
+          <div class="box box_2">
+            <img class="knight knight_black" src="./img/blackPawn.png" />
+          </div>
+          <div class="box box_2">
+            <img class="pawn pawn_black" src="./img/blackPawn.png" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="box box_3"></div>
+          <div class="box box_3"></div>
+          <div class="box box_3"></div>
+          <div class="box box_3"></div>
+          <div class="box box_3"></div>
+          <div class="box box_3"></div>
+          <div class="box box_3"></div>
+          <div class="box box_3"></div>
+        </div>
+        <div class="row">
+          <div class="box box_4"></div>
+          <div class="box box_4"></div>
+          <div class="box box_4"></div>
+          <div class="box box_4"></div>
+          <div class="box box_4"></div>
+          <div class="box box_4"></div>
+          <div class="box box_4"></div>
+          <div class="box box_4"></div>
+        </div>
+        <div class="row">
+          <div class="box box_5"></div>
+          <div class="box box_5"></div>
+          <div class="box box_5"></div>
+          <div class="box box_5"></div>
+          <div class="box box_5"></div>
+          <div class="box box_5"></div>
+          <div class="box box_5"></div>
+          <div class="box box_5"></div>
+        </div>
+        <div class="row">
+          <div class="box box_6"></div>
+          <div class="box box_6"></div>
+          <div class="box box_6"></div>
+          <div class="box box_6"></div>
+          <div class="box box_6"></div>
+          <div class="box box_6"></div>
+          <div class="box box_6"></div>
+          <div class="box box_6"></div>
+        </div>
+        <div class="row">
+          <div class="box box_7">
+            <img class="pawn pawn_white" src="./img/whitePawn.png" />
+          </div>
+          <div class="box box_7">
+            <img class="knight knight_white" src="./img/whitePawn.png" />
+          </div>
+          <div class="box box_7">
+            <img class="bishop bishop_white" src="./img/whitePawn.png" />
+          </div>
+          <div class="box box_7">
+            <img class="queen queen_white" src="./img/whitePawn.png" />
+          </div>
+          <div class="box box_7">
+            <img class="king king_white" src="./img/whitePawn.png" />
+          </div>
+          <div class="box box_7">
+            <img class="bishop bishop_white" src="./img/whitePawn.png" />
+          </div>
+          <div class="box box_7">
+            <img class="knight knight_white" src="./img/whitePawn.png" />
+          </div>
+          <div class="box box_7">
+            <img class="pawn pawn_white" src="./img/whitePawn.png" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="box box_8">
+            <img class="pawn pawn_white" src="./img/whiteRook.png" />
+          </div>
+          <div class="box box_8">
+            <img class="knight knight_white" src="./img/whiteKnight.png" />
+          </div>
+          <div class="box box_8">
+            <img class="bishop bishop_white" src="./img/whiteBishop.png" />
+          </div>
+          <div class="box box_8">
+            <img class="queen queen_white" src="./img/whiteQueen.png" />
+          </div>
+          <div class="box box_8">
+            <img class="king king_white" src="img/whiteKing.png" />
+          </div>
+          <div class="box box_8">
+            <img class="bishop bishop_white" src="./img/whiteKnight.png" />
+          </div>
+          <div class="box box_8">
+            <img class="knight knight_white" src="./img/whiteBishop.png" />
+          </div>
+          <div class="box box_8">
+            <img class="pawn pawn_white" src="./img/whiteRook.png" />
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <script src="main.js"></script>
-</body>
-
+    <script src="main.js"></script>
+  </body>
 </html>
