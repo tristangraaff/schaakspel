@@ -29,47 +29,38 @@ console.log(IndividualBoxClasses.allBoxes);
 
 // let pieceIsSelected = false; <--- werken met state
 
-const allBoxes = document.querySelectorAll(".box")
-let pieceToBeMoved = null;
-let pieceClassArray;
-
-for (let item of allBoxes) {
-  item.addEventListener("click", (event) => {
-    if (event.target.textContent === "♙") {
-      pieceClassArray = event.target.className.split(" ");
-      console.log(pieceClassArray);
-      pieceToBeMoved = "♙";
-    }
-    if (event.target.textContent === "") {
-      if (pieceToBeMoved === null) return;
-      event.target.innerText = pieceToBeMoved;
-      const oldPieceLocation = document.querySelector("." + pieceClassArray[pieceClassArray.length - 1]);
-      console.log(oldPieceLocation);
-      oldPieceLocation.innerHTML = "";
-      pieceToBeMoved = null;
-    }
-  })
-}
+// let pieceClassArray;
 
 class Game {
   constructor(pieces) {
+    this.clickedPiece = null;
+    this.boxes = document.querySelectorAll(".box");
     for (let piece of pieces) {
       console.log(piece.position);
       console.log(piece.name);
       console.log(piece.color);
       console.log(piece.rank);
       console.log(piece.img)
+      console.log(piece)
 
-      // piece.addEventListener("click", () => {
-      
-      // })
+      piece.img.addEventListener("click", () => {
+        this.clickedPiece = piece;
+        console.log(this.clickedPiece);
+        piece.getAllowedPawnMoves();
+      })
     }
-
+    for (let box of this.boxes) {
+      box.addEventListener("click", () => {
+        if (box.childNodes === []) {
+          // add this.clickedPiece here
+        }
+      })
+    }
   }
 }
 
 class Piece {
-  constructor(position, name, color, rank, img) {
+  constructor(position, name, color, rank) {
     this.position = position;
     this.name = name;
     this.color = color;
@@ -78,37 +69,28 @@ class Piece {
   }
 
   getAllowedPawnMoves() {
-    const position = this.position;
-    console.log(position);
-    let allowMoves = [];
+    let allowedMoves = [];
     if (this.color === "white") {
-      allowMoves.push(position - 10);
-      if (position >= 70 && position <= 77) {
-        allowMoves.push(position - 20);
+      allowedMoves.push(this.position - 10);
+      if (this.position >= 70 && this.position <= 77) {
+        allowedMoves.push(this.position - 20);
       } 
     }
     if (this.color === "black") {
-      allowMoves.push(position + 10);
-      if (position >= 20 && position <= 27) {
-        allowMoves.push(position + 20);
+      allowedMoves.push(this.position + 10);
+      if (this.position >= 20 && this.position <= 27) {
+        allowedMoves.push(this.position + 20);
       } 
     }
-    console.log(allowMoves);
+    console.log(allowedMoves)
+    return allowedMoves;
   }
 }
 
-const pawn1 = new Piece(71, "pawn_white", "white", 1, "img");
+const pawn1 = new Piece(70, "pawn_white", "white", 1);
+
 console.log(pawn1.valueOf());
 console.log(pawn1.img);
 console.log(pawn1.getAllowedPawnMoves());
-
-
-
-// const pawnLegalMoves = () => {
-//   if (pawn1.color === "white") {
-//     if (divElement.classList === box_71) const legalMoves = [position - 10, position - 20]; 
-//     else const legalMoves = [position - 10];
-//   }
-// }
 
 const startNewGame = new Game([pawn1]);
